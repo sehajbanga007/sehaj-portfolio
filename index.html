@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sehaj Singh Banga · Matchday</title>
+  <meta name="description" content="Sehaj Singh Banga — Data Science student, footballer, concert regular. Welcome to matchday.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Big+Shoulders+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- ===== PRANK #1: the players' tunnel. The button runs away three times. ===== -->
+<div class="tunnel" id="tunnel" role="dialog" aria-modal="true" aria-labelledby="tunnel-title">
+  <div class="tunnel-lights" aria-hidden="true"></div>
+  <p class="tunnel-kicker">Players' tunnel</p>
+  <h1 id="tunnel-title" class="tunnel-title">Ready to walk out?</h1>
+  <p class="tunnel-taunt" id="taunt" aria-live="polite">Click the button to enter the stadium.</p>
+  <button class="btn-walkout" id="walkout" type="button">Walk out</button>
+</div>
+
+<!-- ===== Kick-off ===== -->
+<header class="hero" id="kickoff" data-track="Kick-off">
+  <div class="scoreboard" aria-label="Live score">
+    <span class="team">Sehaj</span>
+    <span class="score"><b id="score-home">1</b>–<b>0</b></span>
+    <span class="team">Boredom</span>
+    <span class="clock" id="clock">0'</span>
+  </div>
+  <button type="button" class="flood-toggle" id="flood-toggle" aria-pressed="false">
+    <span class="flood-dot" aria-hidden="true"></span><span id="flood-label">Night match: off</span>
+  </button>
+
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="hero-number" aria-hidden="true">7</p>
+      <h2 class="hero-name">Sehaj<br>Singh<br>Banga</h2>
+      <p class="hero-line">Data Science student, Semester V. Football on the turf, hip-hop on repeat, front row whenever there's a show.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#highlights">See my work</a>
+        <button class="btn btn-ghost" id="siu" type="button">Celebrate</button>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="img/suit.jpg" alt="Sehaj in a black turban and black suit taking a mirror selfie" width="788" height="1400">
+      <figcaption>Suited up. Still checking the Madrid score.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <!-- ===== About ===== -->
+  <section class="about" id="about" data-track="Pre-match notes">
+    <div class="wrap about-grid">
+      <img class="about-photo" src="img/portrait-maroon.jpg" alt="Sehaj in a maroon turban taking a mirror selfie" width="675" height="1200" loading="lazy">
+      <div>
+        <h2 class="section-title">Pre-match notes</h2>
+        <p>Sat sri akal, I'm Sehaj. I'm in my fifth semester of Data Science, which means I spend a lot of time asking messy spreadsheets what they're hiding. The best part is the moment a pattern finally shows up — it feels a lot like spotting a gap in a back four.</p>
+        <p>When the laptop closes, I'm on the turf, at martial arts training, or on my way to one of them with Travis Scott, Don Toliver or Karan Aujla in my ears. At college I'm sub-head of the IETE-SF committee, and I've worked with an NGO that helps bring education to underprivileged communities — the work that's taught me the most.</p>
+        <p>The rest of the time you'll find me at a concert (I've been to a lot), at the odd club night, somewhere new, or saying yes to something I've never tried. I care about building things that are useful to real people, a good meal after a long day, and Real Madrid winning on Champions League nights. Cristiano is the GOAT. This is not up for discussion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section class="highlights" id="highlights" data-track="Match highlights">
+    <div class="wrap">
+      <h2 class="section-title">Match highlights</h2>
+      <p class="section-sub">Things I've run, built and played. Full-time results only.</p>
+
+      <div class="fixtures">
+        <article class="fixture">
+          <p class="ft">FT · Education 1–0 Inequality</p>
+          <h3>Working with an education NGO</h3>
+          <p>I worked with an NGO focused on making good education reachable for underprivileged communities. It's the most grounding thing I've done, and a reminder that skills are worth more when they're shared.</p>
+          <ul class="tags"><li>Social impact</li><li>Education</li><li>Teamwork</li></ul>
+        </article>
+
+        <article class="fixture">
+          <p class="ft">FT · IETE-SF 2–1 Empty halls</p>
+          <h3>IETE-SF committee, sub-head</h3>
+          <p>Helping plan and run the committee's events at college: lining up the work, keeping the team moving, and making sure everything is in place before the doors open.</p>
+          <ul class="tags"><li>Leadership</li><li>Event planning</li></ul>
+        </article>
+
+        <article class="fixture">
+          <p class="ft">FT · Beat machine 1–0 Silence</p>
+          <h3>This site's soundtrack</h3>
+          <p>Hit play in the bar at the bottom and a house beat starts. Every kick, clap and hi-hat is generated live in code with the Web Audio API — no audio files.</p>
+          <ul class="tags"><li>JavaScript</li><li>Web Audio API</li></ul>
+        </article>
+
+        <article class="fixture fixture-photo">
+          <div class="duo">
+            <figure><img src="img/turf-night.jpg" alt="An evening five-a-side game under floodlights, with Sehaj in a white shirt and lime socks" width="1158" height="1200" loading="lazy"></figure>
+            <figure><img src="img/top-scorer.jpg" alt="Sehaj holding a top scorer trophy with a medal around his neck" width="588" height="1100" loading="lazy"><figcaption>Top scorer of the tournament</figcaption></figure>
+          </div>
+          <div>
+            <p class="ft">FT · Sehaj 3–2 Everyone else (allegedly)</p>
+            <h3>Evenings on the turf</h3>
+            <p>Five-a-side under the floodlights with the same crew whenever the schedule allows. White shirt, lime socks, zero fear of a sliding tackle. And yes — that's a top scorer trophy. I finished as the top scorer of a tournament, and I will be bringing it up.</p>
+            <p>Football taught me that the boring work — tracking back, talking, staying calm — is what wins games.</p>
+            <ul class="tags"><li>Football</li><li>Top scorer</li><li>Real Madrid shirt, always</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills: the starting XI ===== -->
+  <section class="lineup" id="lineup" data-track="Starting XI">
+    <div class="wrap lineup-grid">
+      <div>
+        <h2 class="section-title">Starting XI</h2>
+        <p class="section-sub">My tech skills, lined up 4-3-3. Every player covers a different part of the pitch. Tap one to see what they bring.</p>
+        <div class="player-card" id="player-card" aria-live="polite">
+          <p class="pc-pos" id="pc-pos">Central midfield · Captain · #7</p>
+          <h3 id="pc-name">Python</h3>
+          <p id="pc-note">Captain. The language I reach for first — data, scripts, models, automation.</p>
+        </div>
+        <div class="bench">
+          <h3>On the bench, ready to come on</h3>
+          <ul class="tags tags-light"><li>Leadership</li><li>Event management</li><li>Teamwork</li><li>Communication</li><li>Football</li><li>Martial arts discipline</li></ul>
+        </div>
+      </div>
+
+      <div class="pitch" id="pitch">
+        <svg class="pitch-lines" viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="6" y="6" width="188" height="288" />
+          <line x1="6" y1="150" x2="194" y2="150" />
+          <circle cx="100" cy="150" r="26" />
+          <rect x="50" y="6" width="100" height="44" />
+          <rect x="50" y="250" width="100" height="44" />
+          <rect x="78" y="6" width="44" height="16" />
+          <rect x="78" y="278" width="44" height="16" />
+        </svg>
+        <!-- players injected by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Interests ===== -->
+  <section class="offpitch" id="offpitch" data-track="Off the pitch">
+    <div class="wrap">
+      <h2 class="section-title">Off the pitch</h2>
+      <p class="section-sub">The tracklist of everything else.</p>
+      <ol class="tracklist">
+        <li><span class="t-name">Music</span><span class="t-desc">Hip-hop on repeat — Travis Scott and Don Toliver run the queue — plus Punjabi (mostly Karan Aujla), with EDM and house when the energy needs to go up.</span><span class="t-time">∞</span></li>
+        <li class="t-live"><span class="t-name">Live shows</span><span class="t-desc">Concerts are my thing — I've been to a lot of them. Plus the odd club night, when the DJ is worth it.</span><span class="t-time">Encore</span></li>
+        <li><span class="t-name">Football &amp; sports</span><span class="t-desc">Playing on the turf, watching Madrid, arguing about Ronaldo.</span><span class="t-time">90:00</span></li>
+        <li><span class="t-name">Martial arts</span><span class="t-desc">Discipline, balance and staying calm under pressure. It sticks with you off the mat too.</span><span class="t-time">3 rounds</span></li>
+        <li><span class="t-name">Adventure</span><span class="t-desc">If it's new and a little bit scary, I'm probably in.</span><span class="t-time">Live</span></li>
+        <li><span class="t-name">Travel</span><span class="t-desc">New cities, new roads, and getting a bit lost on purpose.</span><span class="t-time">4:12</span></li>
+        <li><span class="t-name">Food</span><span class="t-desc">If a place is worth the trip, I'll make the trip.</span><span class="t-time">3:30</span></li>
+        <li><span class="t-name">Gaming</span><span class="t-desc">One more match. Then one more. Then it's 3 am.</span><span class="t-time">3:00</span></li>
+      </ol>
+
+      <div class="stubs" aria-label="Concert ticket stubs">
+        <div class="stub"><span class="stub-top">Admit one</span><span class="stub-name">Hip-hop</span><span class="stub-meta">Travis &amp; Don, loud</span></div>
+        <div class="stub"><span class="stub-top">Admit one</span><span class="stub-name">Punjabi</span><span class="stub-meta">Every Aujla word</span></div>
+        <div class="stub"><span class="stub-top">Admit one</span><span class="stub-name">EDM</span><span class="stub-meta">Waiting for the drop</span></div>
+        <div class="stub"><span class="stub-top">Admit one</span><span class="stub-name">House</span><span class="stub-meta">Till close</span></div>
+        <div class="stub stub-next"><span class="stub-top">Admit one</span><span class="stub-name">Next?</span><span class="stub-meta">Already looking</span></div>
+      </div>
+
+      <div class="vote" id="vote">
+        <h3 class="vote-title">The Ballon d'Or committee needs your vote</h3>
+        <p class="vote-q">Who's the GOAT?</p>
+        <div class="vote-btns">
+          <button type="button" class="btn" id="vote-cr">Cristiano Ronaldo</button>
+          <button type="button" class="btn btn-ghost" id="vote-lm">Messi</button>
+        </div>
+        <div class="vote-result" id="vote-result" hidden>
+          <div class="vote-bar"><span id="vote-fill"></span></div>
+          <p id="vote-text" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="contact" id="contact" data-track="Transfer window">
+    <div class="wrap">
+      <h2 class="section-title">The transfer window is open</h2>
+      <p class="section-sub">Projects, internships, a five-a-side that needs one more player — get in touch.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:sehajbanga007@gmail.com">sehajbanga007@gmail.com</a><span>Email</span></li>
+        <li><a href="https://www.linkedin.com/in/sehaj-singh-banga-4b44b2272/" target="_blank" rel="noopener">Sehaj Singh Banga</a><span>LinkedIn</span></li>
+        <li><a href="https://github.com/sehajbanga007" target="_blank" rel="noopener">sehajbanga007</a><span>GitHub</span></li>
+        <li><a href="https://www.instagram.com/_sehajbanga/" target="_blank" rel="noopener">@_sehajbanga</a><span>Instagram</span></li>
+      </ul>
+
+      <!-- PRANK #3: the "Yes" button refuses to be clicked -->
+      <div class="medical">
+        <p class="medical-q">Quick medical before signing: are you a Barça fan?</p>
+        <div class="medical-btns" id="medical-btns">
+          <button type="button" class="btn btn-ghost" id="barca-yes">Yes</button>
+          <button type="button" class="btn" id="barca-no">No</button>
+        </div>
+        <p class="medical-result" id="medical-result" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Penalty shootout ===== -->
+<section class="shootout" id="penalties" data-track="Penalty shootout">
+  <div class="wrap">
+    <h2 class="section-title">Penalty shootout</h2>
+    <p class="section-sub">Five penalties. Score three to get scouted. The keeper picks a side at random — no pressure.</p>
+
+    <div class="pens" id="pens" aria-label="Your penalties">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="goal-area" id="goal-area">
+      <div class="goal" id="goal">
+        <div class="keeper" id="keeper" aria-hidden="true">
+          <span class="k-head"></span><span class="k-body"></span>
+          <span class="k-arm k-arm-l"></span><span class="k-arm k-arm-r"></span>
+        </div>
+      </div>
+      <div class="ball" id="ball" aria-hidden="true"></div>
+      <p class="pen-msg" id="pen-msg" aria-live="polite">Pick a corner.</p>
+    </div>
+
+    <div class="shoot-btns" id="shoot-btns">
+      <button type="button" class="btn" data-dir="0">Shoot left</button>
+      <button type="button" class="btn" data-dir="1">Shoot centre</button>
+      <button type="button" class="btn" data-dir="2">Shoot right</button>
+    </div>
+    <button type="button" class="btn btn-ghost pen-again" id="pen-again" hidden>Take another five</button>
+  </div>
+</section>
+
+<!-- ===== Stoppage time ===== -->
+<footer class="footer" id="stoppage" data-track="Stoppage time">
+  <button type="button" class="board" id="board" aria-label="Show the next line">
+    <span class="board-label">Added time</span>
+    <span class="board-num" id="board-num">+1</span>
+  </button>
+  <p class="footer-line" id="footer-line" aria-live="polite">By the time you've read this, Real Madrid have already come back from 3&#8288;–&#8288;0 down. Relax.</p>
+  <p class="footer-small">Built by Sehaj in HTML, CSS and JavaScript. No templates were harmed. Tap the board for more.</p>
+</footer>
+
+<!-- ===== Now-playing bar: section navigation + music ===== -->
+<div class="song-panel" id="song-panel" hidden>
+  <div class="song-head">
+    <p class="song-now" id="song-now" aria-live="polite"></p>
+    <button type="button" class="song-close" id="song-close" aria-label="Close the song player">✕</button>
+  </div>
+  <div id="song-embed"></div>
+</div>
+<nav class="player" aria-label="Sections and music">
+  <button type="button" class="pl-btn" id="pl-prev" aria-label="Previous section">⏮</button>
+  <button type="button" class="pl-btn pl-play" id="pl-play" aria-label="Play beat" aria-pressed="false">▶</button>
+  <button type="button" class="pl-btn" id="pl-next" aria-label="Next section">⏭</button>
+  <div class="pl-meta">
+    <p class="pl-track" id="pl-track">Kick-off</p>
+    <p class="pl-artist">Sehaj Singh Banga · <span id="pl-status">beat paused</span></p>
+  </div>
+  <button type="button" class="pl-song" id="pl-song" aria-controls="song-panel" aria-expanded="false">Click to change song</button>
+  <div class="pl-progress" aria-hidden="true"><span id="pl-bar"></span></div>
+</nav>
+
+<div class="floodlights" aria-hidden="true"><span class="fl fl-l"></span><span class="fl fl-r"></span></div>
+
+<!-- PRANK #2: the celebration -->
+<div class="siu-stage" id="siu-stage" aria-hidden="true">
+  <div class="siu-ring"></div>
+  <div class="siu-text">SIUUU</div>
+  <div class="siu-guy"><div class="siu-spin"><img src="img/siu-cutout.png" alt="" width="288" height="700"></div></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
