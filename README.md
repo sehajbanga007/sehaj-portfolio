@@ -2,7 +2,7 @@
 
 My personal portfolio, built as a football matchday with a music player for navigation.
 
-**Live site:** _add your link here_
+**Live site:** https://sehajbanga007.github.io/sehaj-portfolio/
 
 ## What's inside
 - **Players' tunnel** — the entry button dodges you three times before letting you in.
