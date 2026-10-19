@@ -63,11 +63,14 @@ function dodge() {
   return true;
 }
 
+// On phones a tap fires pointerdown AND click; skip that click so one tap = one dodge.
+let skipWalkClick = false;
 walkout.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') dodge(); });
 walkout.addEventListener('pointerdown', (e) => {
-  if (e.pointerType !== 'mouse' && dodge()) e.preventDefault();
+  if (e.pointerType !== 'mouse' && dodge()) { e.preventDefault(); skipWalkClick = true; }
 });
 walkout.addEventListener('click', (e) => {
+  if (skipWalkClick) { skipWalkClick = false; return; }
   if (dodges < 3) { e.preventDefault(); dodge(); return; } // keyboard users get dodged too
   enterStadium();
 });
@@ -413,7 +416,8 @@ function shrinkMessi() {
   lm.style.transform = `scale(${lmScale})`;
 }
 lm.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') shrinkMessi(); });
-lm.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse' && lmScale > 0.2) { e.preventDefault(); shrinkMessi(); } });
+let skipLmClick = false;
+lm.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse' && lmScale > 0.2) { e.preventDefault(); shrinkMessi(); skipLmClick = true; } });
 function showVote(pct, text) {
   voted = true;
   $('#vote-result').hidden = false;
@@ -422,6 +426,7 @@ function showVote(pct, text) {
 }
 $('#vote-cr').addEventListener('click', () => showVote(99.9, 'Correct. Ronaldo 99.9% — Messi 0.1%. The committee agrees.'));
 lm.addEventListener('click', (e) => {
+  if (skipLmClick) { skipLmClick = false; return; }
   if (lmScale > 0.2) { e.preventDefault(); shrinkMessi(); return; }
   showVote(99.9, 'Vote received… and quietly counted for Ronaldo. Ronaldo 99.9% — Messi 0.1%.');
 });
